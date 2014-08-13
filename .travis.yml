@@ -1,13 +1,31 @@
 language: node_js
+
 node_js:
   - "0.11"
+
+env:
+  global:
+    secure: Jc9tSi/yf5qy1Bz0NipXxixXFYMgksorzHReDLGoeSRGG/5aCO2Py1/SQko6Y6YzR0fvuByWXFM8T8Ob0+soeC26CnLygARm50h4Px5vv9iW0RUd0jkmMqMz67fIrAOptfp1lbHe2m9Xe91XhBDTcF6HhdXXKc71y5WsRAawoPA=
+
+before_install:
+  - cp travis-ci.sh $HOME/
+
 before_script:
-  - npm install -g grunt-cli bower
-  - bower install
-script: grunt test
+  - $HOME/travis-ci.sh before-script
+
+script:
+  - $HOME/travis-ci.sh script
+
+after_script:
+  - $HOME/travis-ci.sh after-script
+
+after_success:
+  - $HOME/travis-ci.sh after-success
+
 cache:
   directories:
     - node_modules
+
 notifications:
   slack:
     rooms:
