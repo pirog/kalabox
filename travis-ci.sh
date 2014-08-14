@@ -30,7 +30,7 @@ script() {
 # Clean up after the tests.
 #
 after-script() {
-
+  echo
 }
 
 # after-success
@@ -38,7 +38,7 @@ after-script() {
 # Clean up after the tests.
 #
 after-success() {
-
+  echo
 }
 
 ##
