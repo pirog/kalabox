@@ -46,15 +46,15 @@ after-success() {
 #
 before-deploy() {
   if [ ! -z $TRAVIS_TAG ]; then
-    mv kalabox-win-dev.zip kalabox-win-$TRAVIS_TAG.zip
-    mv kalabox-osx-dev.zip kalabox-osx-$TRAVIS_TAG.zip
-    mv kalabox-linux32-dev.zip kalabox-linux32-$TRAVIS_TAG.zip
-    mv kalabox-linux64-dev.zip kalabox-linux64-$TRAVIS_TAG.zip
+    mv built/kalabox-win-dev.zip built/kalabox-win-$TRAVIS_TAG.zip
+    mv built/kalabox-osx-dev.zip built/kalabox-osx-$TRAVIS_TAG.zip
+    mv built/kalabox-linux32-dev.zip built/kalabox-linux32-$TRAVIS_TAG.zip
+    mv built/kalabox-linux64-dev.zip built/kalabox-linux64-$TRAVIS_TAG.zip
   else
-    mv kalabox-win-dev.zip kalabox-win-dev-$TRAVIS_BUILD_NUMBER.zip
-    mv kalabox-osx-dev.zip kalabox-osx-dev-$TRAVIS_BUILD_NUMBER.zip
-    mv kalabox-linux32-dev.zip kalabox-linux32-dev-$TRAVIS_BUILD_NUMBER.zip
-    mv kalabox-linux64-dev.zip kalabox-linux64-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv built/kalabox-win-dev.zip built/kalabox-win-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv built/kalabox-osx-dev.zip built/kalabox-osx-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv built/kalabox-linux32-dev.zip built/kalabox-linux32-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv built/kalabox-linux64-dev.zip built/kalabox-linux64-dev-$TRAVIS_BUILD_NUMBER.zip
   fi
 }
 
