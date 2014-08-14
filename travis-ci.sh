@@ -30,6 +30,7 @@ script() {
 # Clean up after the tests.
 #
 after-script() {
+
 }
 
 # after-success
@@ -37,6 +38,7 @@ after-script() {
 # Clean up after the tests.
 #
 after-success() {
+
 }
 
 ##
@@ -90,7 +92,7 @@ case $COMMAND in
     run_command script
     ;;
 
-  after_script)
+  after-script)
     run_command after_script
     ;;
 
