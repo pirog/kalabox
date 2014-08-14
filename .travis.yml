@@ -31,7 +31,7 @@ deploy:
   username: kalamuna
   api_key:
     secure: F0zPNBS1Zf77z2eAuWYwtCKSkqS1/Ml0aewHTeqzt4ZpoSf/KdAaZd8Ot+gUaoOGoNhvhKZbhv5BUdaZZB/H88hRH0Cyp50n9Y1uuCe7bdQyHzQ8xZ7rkq2p1q0SMhSXX1LUJfUGhgLzc6RN2sKHiTxrmn7AaIGx+1nRkKP+J0g=
-  region: Chicago
+  region: ord
   container: kalabox
   on:
     repo: pirog/kalabox
