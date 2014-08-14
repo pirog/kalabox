@@ -50,6 +50,11 @@ before-deploy() {
     mv kalabox-osx-dev.zip kalabox-osx-$TRAVIS_TAG.zip
     mv kalabox-linux32-dev.zip kalabox-linux32-$TRAVIS_TAG.zip
     mv kalabox-linux64-dev.zip kalabox-linux64-$TRAVIS_TAG.zip
+  else
+    mv kalabox-win-dev.zip kalabox-win-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv kalabox-osx-dev.zip kalabox-osx-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv kalabox-linux32-dev.zip kalabox-linux32-dev-$TRAVIS_BUILD_NUMBER.zip
+    mv kalabox-linux64-dev.zip kalabox-linux64-dev-$TRAVIS_BUILD_NUMBER.zip
   fi
 }
 
