@@ -34,7 +34,7 @@ deploy:
   api_key:
     secure: F0zPNBS1Zf77z2eAuWYwtCKSkqS1/Ml0aewHTeqzt4ZpoSf/KdAaZd8Ot+gUaoOGoNhvhKZbhv5BUdaZZB/H88hRH0Cyp50n9Y1uuCe7bdQyHzQ8xZ7rkq2p1q0SMhSXX1LUJfUGhgLzc6RN2sKHiTxrmn7AaIGx+1nRkKP+J0g=
   region: ord
-  container: kalabox
+  container: kb2
   skip_cleanup: true
   on:
     repo: pirog/kalabox
