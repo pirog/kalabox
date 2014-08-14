@@ -1,7 +1,6 @@
 #!/bin/bash
 
 COMMAND=$1
-BUILD_TOP=`dirname $TRAVIS_BUILD_DIR`
 EXIT_VALUE=0
 
 ##
@@ -81,7 +80,7 @@ run_command() {
 trap 'set_error' ERR
 
 # We want to always start from the same directory:
-cd $BUILD_TOP
+cd $TRAVIS_BUILD_DIR
 
 case $COMMAND in
   before-script)
