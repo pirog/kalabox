@@ -27,7 +27,6 @@ deploy:
   skip_cleanup: true
   on:
     repo: pirog/kalabox
-    branch: 27-build-artifacts-and-deploy
     tags: true
   provider: cloudfiles
   username: kalamuna
