@@ -38,19 +38,6 @@ module.exports = function(grunt) {
           }
         ]
       },
-      osx: {
-        options: {
-          archive: 'built/kalabox-osx-dev.zip'
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'dist/Kalabox/osx/',
-            src: ['**'],
-            dest: 'Kalabox/'
-          }
-        ]
-      },
       linux32: {
         options: {
           archive: 'built/kalabox-linux32-dev.zip'
@@ -183,7 +170,6 @@ module.exports = function(grunt) {
     'copy',
     'nodewebkit',
     'compress:win',
-    'compress:osx',
     'compress:linux32',
     'compress:linux64'
   ]);
