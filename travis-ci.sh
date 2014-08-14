@@ -45,7 +45,6 @@ after-success() {
 # Clean up after the tests.
 #
 before-deploy() {
-  cd built
   if [ ! -z $TRAVIS_TAG ]; then
     mv kalabox-win-dev.zip kalabox-win-$TRAVIS_TAG.zip
     mv kalabox-osx-dev.zip kalabox-osx-$TRAVIS_TAG.zip
