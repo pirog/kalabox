@@ -40,6 +40,20 @@ after-success() {
   grunt build
 }
 
+# after-success
+#
+# Clean up after the tests.
+#
+before-deploy() {
+  cd built
+  if [ ! -z $TRAVIS_TAG ]; then
+    mv kalabox-win-dev.zip kalabox-win-$TRAVIS_TAG.zip
+    mv kalabox-osx-dev.zip kalabox-osx-$TRAVIS_TAG.zip
+    mv kalabox-linux32-dev.zip kalabox-linux32-$TRAVIS_TAG.zip
+    mv kalabox-linux64-dev.zip kalabox-linux64-$TRAVIS_TAG.zip
+  fi
+}
+
 ##
 # UTILITY FUNCTIONS:
 ##
@@ -97,6 +111,10 @@ case $COMMAND in
 
   after-success)
     run_command after-success
+    ;;
+
+  before-deploy)
+    run_command before-deploy
     ;;
 esac
 
