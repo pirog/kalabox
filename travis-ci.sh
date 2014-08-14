@@ -37,7 +37,7 @@ after-script() {
 # Clean up after the tests.
 #
 after-success() {
-  echo
+  grunt build
 }
 
 ##
