@@ -8,9 +8,9 @@ Kalabox is a free, integrated workflow solution for [Drupal](http://drupal.org) 
 
 Based on [Docker](http://docker.io) so devs with custom virtual environments can easily adapt their tools to Kalabox. Deploy your tools to everyone and enjoy the blazing-fast performance, configurability and portability of containers!
 
-**Cross Platform**
+**Cross Platform** 
 
-Now works on Linux and Windows!
+Now works on Linux and Windows! 
 
 **More Hosting Solutions**
 

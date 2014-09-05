@@ -26,6 +26,12 @@ module.exports = function(grunt) {
         src: [
           'src/css/style.less'
         ]
+      },
+      tests: {
+        src: [
+          'test/e2e/**/*.spec.js',
+          'src/modules/*/test/e2e/**/*.spec.js'
+        ]
       }
     },
     bump: {
@@ -130,10 +136,7 @@ module.exports = function(grunt) {
         }
       },
       default: {
-        specs: [
-          'test/e2e/**/*.spec.js',
-          'src/modules/*/test/e2e/**/*.spec.js'
-        ]
+        specs: ['<%= files.tests.src %>']
       }
     },
     /**

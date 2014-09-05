@@ -7,6 +7,10 @@ angular.module('kalabox.boot2docker', [])
 
     };
 
+    /**
+     * validator for jsdoc data existance
+     * {(FunctionDeclaration|FunctionExpression)} node
+     */
     function getVersion() {
       var deferred = $q.defer();
       exec('boot2docker version', function(error, stdout) {

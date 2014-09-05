@@ -35,6 +35,8 @@
     "grunt-node-webkit-builder": "~0.2.2",
     "grunt-protractor-runner": "https://github.com/kalabox/grunt-protractor-runner/tarball/master",
     "grunt-shell": "~1.0.1",
+    "jscs": "^1.6.1",
+    "jscs-jsdoc": "0.0.10",
     "jshint-stylish": "^0.4.0",
     "karma": "^0.12.21",
     "karma-chrome-launcher": "^0.1.4",
