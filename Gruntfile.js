@@ -6,6 +6,7 @@ module.exports = function(grunt) {
 
   var path = require('path');
   var pconfig = require('./src/lib/pconfig');
+  var git = require('git-rev');
 
   var config = {
     pkg: grunt.file.readJSON('package.json'),
@@ -34,7 +35,7 @@ module.exports = function(grunt) {
         updateConfigs: [],
         commit: true,
         commitMessage: 'Release v%VERSION%',
-        commitFiles: ['package.json', 'bower.json'],
+        commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md'],
         createTag: true,
         tagName: 'v%VERSION%',
         tagMessage: 'Version %VERSION%',
@@ -168,6 +169,19 @@ module.exports = function(grunt) {
         dest: 'src/css/style.css'
       }
     },
+    changelog: {
+      lasttag: {
+        options: {
+          dest: 'CHANGELOG.md',
+          insertType: 'prepend',
+          featureRegex: /^(.*)#\d+:?(.*)$/gim,
+          partials: {
+            features: 'STUFF:\n\n{{#if features}}{{#each features}}{{> feature}}{{/each}}{{else}}{{> empty}}{{/if}}\n'
+          },
+          template: 'VERSION <%= pkg.version %>\n==============\n\n{{> features}}'
+        }
+      }
+    },
     watch: {
       options: {
         livereload: false
@@ -235,6 +249,11 @@ module.exports = function(grunt) {
     }
   };
 
+  // Add the version to changelog
+  git.tag(function (tag) {
+    config.changelog.lasttag.options.after = tag;
+  });
+
   // initialize task config
   grunt.initConfig(config);
 
@@ -278,6 +297,10 @@ module.exports = function(grunt) {
     'protractor:default'
   ]);
 
+  grunt.registerTask('change', [
+    'changelog:lasttag'
+  ]);
+
   grunt.registerTask('build', [
     'clean',
     'bower-install-simple:install',
@@ -298,6 +321,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('release', [
     'bump-only:minor',
+    'changelog:lasttag',
     'bump-commit'
   ]);
 
